@@ -1,0 +1,25 @@
+{
+  "name": "gulp_sass",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kayla Cohn <kayla.s.cohn@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.9",
+    "compass-breakpoint": "breakpoint-sass#~2.6.1"
+  }
+}

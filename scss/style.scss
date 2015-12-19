@@ -1,0 +1,131 @@
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/compass-breakpoint/stylesheets/breakpoint";
+
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  color: white;
+  background: #919098;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* --------------------------------
+
+Tooltip
+
+-------------------------------- */
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: table;
+}
+
+section .center {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.trigger {
+  position: relative;
+  background: #BA8F95;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  border-radius: 50em;
+  box-shadow: 0 2px 5px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255, .2);
+  color: white;
+}
+
+span, em, i {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+span {
+  overflow: hidden;
+}
+
+em, i {
+  transition: top .3s;
+}
+
+em {
+  top: 0;
+  line-height: 60px;
+}
+
+i {
+  top: 100%;
+  background: url("../img/icon-download.svg") no-repeat center center;
+}
+
+.trigger:hover em {
+  top: -100%;
+}
+
+.trigger:hover i {
+  top: 0;
+}
+
+.trigger::before, .trigger::after {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+.trigger::before {
+  content: 'Files Size: 50M';
+  width: 140px;
+  height: 60px;
+  line-height: 60px;
+  background: #CFBCDF;
+  border-radius: .25em;
+  bottom: 90px;
+  left: calc(50% - 70px);
+}
+
+.trigger::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #CFBCDF;
+  left: calc(50% - 10px);
+  bottom: 70px;
+}
+
+.trigger:hover::before,
+.trigger:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.trigger:hover::before {
+  bottom: 80px;
+}
+
+.trigger:hover::after {
+  bottom: 60px;
+}
